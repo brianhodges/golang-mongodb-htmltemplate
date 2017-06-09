@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body style="padding-left: 2cm; padding-right: 2cm;">
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+          <a class="navbar-brand" href="/">Home</a>
+          <a class="navbar-brand" href="/about">About</a>
+        </nav>
+        
+        <h1>{{ .App.Name }}</h1>
+        <i>All data is pulled in using GoLang from a NoSQL(MongoDB) database. Records pulled from <a href="https://rails-mongodb-heroku.herokuapp.com/people" target="_blank">HERE</a>.</i>
+        <br><br>
+        {{ $length := len .People }}
+        {{ if ne $length 0 }}
+            {{range $p := .People}}
+                <p>
+                    <strong>Full Name:</strong>&nbsp;{{ $p.Full_Name }}<br>
+                    <strong>Email:</strong>&nbsp;{{ $p.Email }}<br>
+                    <strong>IP Address:</strong>&nbsp;{{ $p.IP_Address }}<br>
+                    <strong>BTC Address:</strong>&nbsp;{{ $p.BTC_Address }}<br>
+                    <img src="data:image/png;base64,{{ $p.BTC_QR }}"/>
+                </p>
+            {{ end }}
+        {{ else }}
+            <p>
+                <strong>No Results Returned</strong>
+            </p>
+        {{ end }}
+        <br><br>
+    </body>
+    <footer>
+        <p>v{{ .App.Version }}</p>
+    </footer>
+</html>
