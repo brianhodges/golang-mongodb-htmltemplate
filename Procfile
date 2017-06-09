@@ -1,1 +1,1 @@
-web: golang-mongodb-heroku
+web: golang-mongodb-htmltemplate
