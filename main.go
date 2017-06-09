@@ -29,7 +29,7 @@ func check(err error) {
 //index view handler
 func index(w http.ResponseWriter, r *http.Request) {
     url := r.FormValue("url")
-    app := app.Application{Name: "golang-mongodb-heroku", Version: "1.0.1"}
+    app := app.Application{Name: "golang-mongodb-htmltemplate", Version: "1.0.1"}
     
     //url params
     lName := r.URL.Query().Get("last_name")
