@@ -8,7 +8,7 @@ Just a project more for myself to refer back to when working on future GoLang pr
 
 export MONGODB_URI="mongodb://restofurl"
 
-export MONGODB_DB="mongodb_database_name"   <-- check config/mongoid.yml for development database name
+export MONGODB_DB="mongodb_database_name"
 
 export PORT="8080"
 
